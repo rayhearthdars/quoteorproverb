@@ -1,1 +1,1 @@
-# quote
+# quote or proverb
