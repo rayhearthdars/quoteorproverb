@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Quote or Proverb?</title>
+</head>
+<body>
+    <header>
+        <h1>Quote or Proverb?</h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <legend>Would you like to see a quote or a proverb?</legend>
+                <div>
+                    <div>
+                        <input id="quote" type="radio" name="quote_or_proverb" value="A quote" required>
+                        <label for="quote">A quote</label>
+                    </div>
+                    <div>
+                        <input id="proverb" type="radio" name="quote_or_proverb" value="A proverb" required>
+                        <label for="proverb">A proverb</label>       
+                    </div>
+                </div>
+                <input type="submit" id="submit" name="submit" value="See the message">
+            </form>
+            <div class="questionMark">
+                <p>?</p>
+            </div>
+            <div class="answer">
+                <p class="answerMessage"></p>
+            </div>
+            <div class="buttonFavoriteAndReset">
+                <button type="button" class="favorite">Add to favourite</button>
+                <button type="reset" class="resetButton">Reset</button>
+            </div>
+            
+        </section>
+    </main>
+    <script src="./js/index.js"/>
+</body>
+</html>
