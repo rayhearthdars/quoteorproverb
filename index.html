@@ -13,33 +13,55 @@
     </header>
     <main>
         <section>
-            <form>
-                <legend>Would you like to see a quote or a proverb?</legend>
-                <div>
+            <div id="backgroundContainer">          
+                <form id="submitForm">
+                    <legend>Would you like to see a quote or a proverb?</legend>
                     <div>
-                        <input id="quote" type="radio" name="quote_or_proverb" value="A quote" required>
-                        <label for="quote">A quote</label>
+                        <div>
+                            <input id="quote" type="radio" name="quote_or_proverb" value="A quote" required>
+                            <label for="quote">A quote</label>
+                        </div>
+                        <div>
+                            <input id="proverb" type="radio" name="quote_or_proverb" value="A proverb" required>
+                            <label for="proverb">A proverb</label>       
+                        </div>
                     </div>
-                    <div>
-                        <input id="proverb" type="radio" name="quote_or_proverb" value="A proverb" required>
-                        <label for="proverb">A proverb</label>       
+                    <input type="submit" id="submit" name="submit" value="See the message">
+                </form>
+                <!-- <div id="everythingExceptSubmitForm">                -->
+                    <div id="board">
+                        <div class="questionMark">
+                            <p>?</p>
+                        </div>
+                        <div class="answer">
+                            <p class="answerMessage"></p>
+                        </div>
+                        <form id="createNewMessage">
+                            <label for="addQuoteOrProverb" id="labeladdQuoteOrProverb">Add your own message</label>
+                            <select id="addQuoteOrProverb" required>
+                                <option value="quote">A quote</option>
+                                <option value="proverb">A proverb</option>
+                            </select>
+                            <textarea id="addMessage" name="addMessage" required placeholder="Your message..." cols="20" rows="3" minlength="15" maxlength="500"></textarea>
+                            <input type="submit" id="submitMessage" name="submitMessage" value="Submit">
+                        </form>
                     </div>
                 </div>
-                <input type="submit" id="submit" name="submit" value="See the message">
-            </form>
-            <div class="questionMark">
-                <p>?</p>
-            </div>
-            <div class="answer">
-                <p class="answerMessage"></p>
-            </div>
-            <div class="buttonFavoriteAndReset">
-                <button type="button" class="favorite">Add to favourite</button>
-                <button type="reset" class="resetButton">Reset</button>
-            </div>
-            
+                <div class="allButtonsContainer">
+                    <div class="buttonAddFavoriteAndReset">
+                        <button type="button" class="addButton">Add message</button>
+                        <button type="button" class="removeButton">Remove message</button>
+                        <button type="reset" class="resetButton">Reset</button>
+                    </div>
+                    <div class="buttonAddFavoriteAndReset">
+                        <button type="button" class="favorite">Add to favourite</button>
+                        <button type="button" class="seeFavorite">See your favorite</button>
+                        <button type="button" class="clearFavorite">Clear your Favorite</button>
+                    </div>
+                </div>
+            <!-- </div>    -->
         </section>
     </main>
-    <script src="./js/index.js"/>
+    <script src="./js/index.js"></script>
 </body>
 </html>

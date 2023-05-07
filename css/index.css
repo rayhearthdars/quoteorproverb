@@ -3,103 +3,187 @@
     padding: 0;
 }
 
-html{
-    height: 10vh;
-}
 body {
     overflow-x: hidden;
     text-align: center;
-    background-color: rgba(76, 131, 100);
+    background-color: rgba(76, 131, 100, 1);
+    box-sizing: border-box;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
     height: 40px;
     margin: 10px 0px;
 }
 
-header h1 {
-    font-size: 1.5rem;
-    color: #f6f1db;
-}
-
-main {
-    background-color: rgba(76, 131, 100);
-    background-image: url(../image/zenMobile.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
+h1 {
+    font-size: 2.5rem;
+    color: white;
 }
 
 section{
     display: flex;
     flex-direction: column;
 }
-section form legend {
-    margin: 1.5rem 1.2rem 1.5rem 1.2rem;
-    font-size: 1.2rem;
-    color: rgb(56, 98, 74);
-}
-form > label {
-    font-size: 1.2rem;
-}
-button, #submit {
-    margin: 1rem;
-    color:#f6f1db;
-    background-color: rgba(76, 131, 100);
-    padding: 5px;
-    border: solid 2px rgba(76, 131, 100);
+
+button, input[type=submit] {
+    width: 10rem;
+    height: 4rem;
+    margin: 0.5rem;
+    color: #f6f1db;
+    background-color: rgba(200, 110, 21, 0.692);
+    border: solid 2px rgb(200, 110, 21);
     border-radius: 5px;
-    box-shadow: 2px 5px 1px rgba(76, 131, 100, 0.7);
-}
-button:hover, #submit:hover {
-    position: relative;
-    top: 4px;
-    box-shadow: 1px 1px 1px rgba(76, 131, 100, 0.7);
+    box-shadow: 2px 5px 1px rgba(200, 110, 21, 0.912);
+    font-size: 1.2rem;
 }
 
-form >div{
+button:hover, input[type=submit]:hover {
+    position: relative;
+    top: 4px;
+    box-shadow: 1px 1px 1px rgba(200, 110, 21, 0.912);
+}
+
+#submitForm legend {
+    margin: 1rem auto;
+    font-size: 1.7rem;
+    color: rgb(56, 98, 74);
+    width: 75vw;
+}
+#submitForm label {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+#submitForm > div{
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     color: rgb(56, 98, 74);
 }
-form > div input[type="radio"] {
-    margin: 0 1.5rem;
-}
-.questionMark, .answer {
-    background-color: rgba(73, 131, 100, 0.705);
-    width: 40%;
-    min-width: 250px;
-    height: 40%;
-    min-height: 125px;
-    margin: 10px auto;
-    border-radius: 15px;
+
+#backgroundContainer, #favoriteMessageBoard, #removeMessageBoard {
     display: flex;
+    flex-direction: column;
+    background-image: url(../image/zenMobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 2rem;
+}
+#removeMessageBoard {
+    align-items: center;
+    justify-content: center;
+}
+.allButtonsContainer {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+#submitMessage {
+    margin: 1rem;
+    color: rgb(56, 98, 74);
+    background-color:#f6f1db;
+    padding: 5px;
+    border: solid 1px #f6f1dbbe;
+    border-radius: 5px;
+    box-shadow: 2px 3px 1px #f6f1dbbe;
+}
+#submitMessage:hover {
+    position: relative;
+    top: 2px;
+    box-shadow: 1px 1px 1px #f6f1dbbe;
+}
+
+
+.buttonAddFavoriteAndReset {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.questionMark, .answer, #createNewMessage {
+    background-color: #498364ed;
+    max-width: 75vw;
+    min-height: 40vw;
+    margin: 5px auto;
+    border-radius: 15px;
     justify-content: center;
     align-items: center;
 }
-.answer {
-    display:none;
+
+.questionMark {
+    display: flex;/*change*/
 }
 .questionMark p {
-    font-size: 2.5rem;
+    font-size: 7rem;
     color: #f6f1db;
-}
-.answer p {
-    font-size: 1rem;
-    color: #f6f1db;
-}
-.buttonFavoriteAndReset {
-    display: flex;
-    justify-content: center;
 }
 
-.favorite, .resetButton{
-    width: 100px;
-    margin: 0.5rem;
-    padding: 5px;
+.answer {
+    display: none;
+}
+.answer p {
+    font-size: 2rem;
+    color: #f6f1db;
+}
+
+#createNewMessage {
+    display: none; 
+    flex-direction: column;
+    color: #f6f1db;
+    font-size: 2rem;
+}
+#createNewMessage label {
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+#createNewMessage select {
+    background-color: #f6f1db;
+    border-radius: 5px;
+    color: rgb(56, 98, 74);
+    margin: 2rem;
+    font-size: 1.5rem;
+}
+#submitMessage {
+    font-size: 1.2rem;
+}
+
+#addMessage {
+    width: 45vw;
+    height: 20vw;
+    background-color: #f6f1db;
+    border: solid 2px #f7eec4;
+    border-radius: 5px;
+    color: rgb(56, 98, 74);
+    font-size: 1.2rem;
+}
+
+#favoriteMessageBoard {
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+.favoriteSentences, .divContainer {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: #498364ed;
+    color: white;
+    max-width: 70vw;
+    border-radius: 15px;
+}
+
+@media screen and (min-width: 780px) {
+    #backgroundContainer {
+        background-image: url(../image/zen.jpg);
+        padding-bottom: 2rem;
+    }
+    .questionMark, .answer, #createNewMessage {
+        max-width: 50vw;
+        min-height: 20vw;
+    }
 }
