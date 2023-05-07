@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Quote or Proverb?</title>
+    <title>Citation ou proverbe?</title>
 </head>
 <body>
     <header>
-        <h1>Quote or Proverb?</h1>
+        <h1>Citation ou proverb?</h1>
     </header>
     <main>
         <section>
             <div id="backgroundContainer">          
                 <form id="submitForm">
-                    <legend>Would you like to see a quote or a proverb?</legend>
+                    <legend>Que souhaites-tu?</legend>
                     <div>
                         <div>
                             <input id="quote" type="radio" name="quote_or_proverb" value="A quote" required>
-                            <label for="quote">A quote</label>
+                            <label for="quote">Une citation</label>
                         </div>
                         <div>
                             <input id="proverb" type="radio" name="quote_or_proverb" value="A proverb" required>
-                            <label for="proverb">A proverb</label>       
+                            <label for="proverb">Un proverbe</label>       
                         </div>
                     </div>
-                    <input type="submit" id="submit" name="submit" value="See the message">
-                </form>
-                <!-- <div id="everythingExceptSubmitForm">                -->
+                    <input type="submit" id="submit" name="submit" value="Voir le message">
+                </form>            
                     <div id="board">
                         <div class="questionMark">
                             <p>?</p>
@@ -37,29 +36,28 @@
                             <p class="answerMessage"></p>
                         </div>
                         <form id="createNewMessage">
-                            <label for="addQuoteOrProverb" id="labeladdQuoteOrProverb">Add your own message</label>
+                            <label for="addQuoteOrProverb" id="labeladdQuoteOrProverb">Ajouter son message</label>
                             <select id="addQuoteOrProverb" required>
-                                <option value="quote">A quote</option>
-                                <option value="proverb">A proverb</option>
+                                <option value="quote">Une citation</option>
+                                <option value="proverb">Un proverbe</option>
                             </select>
-                            <textarea id="addMessage" name="addMessage" required placeholder="Your message..." cols="20" rows="3" minlength="15" maxlength="500"></textarea>
-                            <input type="submit" id="submitMessage" name="submitMessage" value="Submit">
+                            <textarea id="addMessage" name="addMessage" required placeholder="Message..." cols="20" rows="3" minlength="15" maxlength="500"></textarea>
+                            <input type="submit" id="submitMessage" name="submitMessage" value="Soumettre">
                         </form>
                     </div>
                 </div>
                 <div class="allButtonsContainer">
                     <div class="buttonAddFavoriteAndReset">
-                        <button type="button" class="addButton">Add message</button>
-                        <button type="button" class="removeButton">Remove message</button>
+                        <button type="button" class="addButton">Ajouter un message</button>
+                        <button type="button" class="removeButton">Supprimer un message</button>
                         <button type="reset" class="resetButton">Reset</button>
                     </div>
                     <div class="buttonAddFavoriteAndReset">
-                        <button type="button" class="favorite">Add to favourite</button>
-                        <button type="button" class="seeFavorite">See your favorite</button>
-                        <button type="button" class="clearFavorite">Clear your Favorite</button>
+                        <button type="button" class="favorite">Ajouter aux favoris</button>
+                        <button type="button" class="seeFavorite">Voir les favoris</button>
+                        <button type="button" class="clearFavorite">Supprimer les favoris</button>
                     </div>
                 </div>
-            <!-- </div>    -->
         </section>
     </main>
     <script src="./js/index.js"></script>
