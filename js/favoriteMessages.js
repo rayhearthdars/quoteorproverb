@@ -8,7 +8,7 @@ const favoriteMessageBoard = document.getElementById("favoriteMessageBoard");
 //return to HomePage
 
 const returnToHomePage = () => {
-    window.location = "../index.html";
+    window.location = "./index.html";
 };
 
 

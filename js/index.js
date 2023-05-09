@@ -145,7 +145,7 @@ const displayMessage = (ev) => {
 // send to new page to clear data from the new messages added
 
 const sendToRemovePage = () => {
-    window.location = "../removeMessage.html";
+    window.location = "./removeMessage.html";
 };
 
 ///////////////////////////////////////////////////////////////////////////
@@ -164,7 +164,7 @@ const addFavoriteToLocalStorage = () => {
 // send user to new page on click of seeFavorite button
 
 const changePage = () => {
-    window.location = "../favoriteMessages.html";
+    window.location = "./favoriteMessages.html";
 };
 
 ///////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@ const removeMessagesButton = document.getElementById("removeMessagesButton");
 //Return to Homepage
 
 const returnToHomePage = () => {
-    window.location = "../index.html";
+    window.location = "./index.html";
 };
 
 /////////////////////////////////////////////////////////////////////////
