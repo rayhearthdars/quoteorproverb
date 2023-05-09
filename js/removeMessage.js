@@ -1,23 +1,22 @@
+const returnToIndexPageFromRemove = document.getElementById("returnToIndexPageFromRemove");
+const removeMessageBoard = document.getElementById("removeMessageBoard");
+const removeMessagesButton = document.getElementById("removeMessagesButton");
+
 /////////////////////////////////////////////////////////////////////////
 //Return to Homepage
 
-const returnToIndexPageFromRemove = document.getElementById("returnToIndexPageFromRemove");
-
-returnToIndexPageFromRemove.addEventListener("click", () => {
-    window.location = "/users/gabri/Documents/Konexio/quoteorproverb/index.html";
-});
+const returnToHomePage = () => {
+    window.location = "../index.html";
+};
 
 /////////////////////////////////////////////////////////////////////////
 // display form to remove messages
-
-const removeMessageBoard = document.getElementById("removeMessageBoard");
-const removeMessagesButton = document.getElementById("removeMessagesButton");
 
 const createInputCheckboxForMessages = () => {
     if (localStorage.getItem("newMessage") !== null) {
         let newMessage = localStorage.getItem("newMessage");
         newMessage = JSON.parse(newMessage);
-        
+
         for (let i = 0; i < newMessage.length; i++) {
             let divContainer = document.createElement("div");
             divContainer.className = "divContainer";
@@ -41,12 +40,10 @@ const createInputCheckboxForMessages = () => {
     }
 };
 
-window.addEventListener("load", createInputCheckboxForMessages);
-
 /////////////////////////////////////////////////////////////////
 // remove the messages you added on button submit
 
-removeMessageBoard.addEventListener("submit", () => {
+const removeMessagesAddedOnSubmit = () => {
     let newMessageCheckboxInputs = document.getElementsByName("newMessageCheckbox");
 
     let newMessage = localStorage.getItem("newMessage");
@@ -68,4 +65,11 @@ removeMessageBoard.addEventListener("submit", () => {
     localStorage.setItem("newMessage", JSON.stringify(newMessage));
     localStorage.setItem("newDataMessages", JSON.stringify(newDataMessages));
     localStorage.setItem("favoriteMessagesArray", JSON.stringify(favoriteMessagesArray));
-});
+};
+
+//////////////////////////////////////////////////////////////////////////////
+//Function call
+
+returnToIndexPageFromRemove.addEventListener("click", returnToHomePage);
+window.addEventListener("load", createInputCheckboxForMessages);
+removeMessageBoard.addEventListener("submit", removeMessagesAddedOnSubmit);

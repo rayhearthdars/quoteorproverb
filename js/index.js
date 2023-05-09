@@ -40,20 +40,27 @@ const data = [
         message: "Avec du temps et de la patience, on vient à bout de tout.",
     },
 ];
-// const createMessage = (type, message) => {
-//     return {
-//         id: id,
-//         type: type,
-//         message: message,
-//         favorite: false,
-//     };
-// };
-
-//////////////////////////////////////////////////////////////////////
-//Make message disappear on click of reset Button
 
 const resetButton = document.getElementsByClassName("resetButton").item(0);
 const submitButton = document.getElementById("submit");
+const addForm = document.getElementsByClassName("addButton").item(0);
+const submitMessage = document.getElementById("submitMessage");
+const createNewMessage = document.getElementById("createNewMessage");
+const addMessage = document.getElementById("addMessage");
+const submitForm = document.getElementById("submitForm");
+const questionMark = document.getElementsByClassName("questionMark").item(0);
+const answerMessage = document.getElementsByClassName("answerMessage").item(0);
+const radioQuote = document.getElementById("quote");
+const radioProverb = document.getElementById("proverb");
+const answer = document.getElementsByClassName("answer").item(0);
+const removeButton = document.getElementsByClassName("removeButton").item(0);
+const favoriteBtn = document.getElementsByClassName("favorite").item(0);
+let favoriteMessagesArray = [];
+const seeFavoriteBtn = document.getElementsByClassName("seeFavorite").item(0);
+const clearFavoriteBtn = document.getElementsByClassName("clearFavorite").item(0);
+
+//////////////////////////////////////////////////////////////////////
+//Make message disappear on click of reset Button
 
 const reset = () => {
     if (answerMessage.textContent !== null) {
@@ -65,15 +72,8 @@ const reset = () => {
     }
 };
 
-resetButton.addEventListener("click", reset);
-
 //////////////////////////////////////////////////////////////////////////
 // Add message and add it to start array (data)
-
-const addForm = document.getElementsByClassName("addButton").item(0);
-const submitMessage = document.getElementById("submitMessage");
-const createNewMessage = document.getElementById("createNewMessage");
-const addMessage = document.getElementById("addMessage");
 
 if (JSON.parse(localStorage.getItem("newMessage")) !== null) {
     var newMessage = JSON.parse(localStorage.getItem("newMessage"));
@@ -118,18 +118,8 @@ const submitTheNewMessage = (ev) => {
     addMessage.value = "";
 };
 
-addForm.addEventListener("click", formAppears);
-createNewMessage.addEventListener("submit", submitTheNewMessage);
-
 ////////////////////////////////////////////////////////////////////////////
 //Make message of el from array of object appear on click
-
-const submitForm = document.getElementById("submitForm");
-const questionMark = document.getElementsByClassName("questionMark").item(0);
-const answerMessage = document.getElementsByClassName("answerMessage").item(0);
-const radioQuote = document.getElementById("quote");
-const radioProverb = document.getElementById("proverb");
-const answer = document.getElementsByClassName("answer").item(0);
 
 const displayMessage = (ev) => {
     ev.preventDefault();
@@ -151,23 +141,15 @@ const displayMessage = (ev) => {
     submitButton.disabled = true;
 };
 
-submitForm.addEventListener("submit", displayMessage);
-
 ///////////////////////////////////////////////////////////////////////////
 // send to new page to clear data from the new messages added
 
-const removeButton = document.getElementsByClassName("removeButton").item(0);
-
 const sendToRemovePage = () => {
-    window.location = "/users/gabri/Documents/Konexio/quoteorproverb/removeMessage.html";
+    window.location = "../removeMessage.html";
 };
 
-removeButton.addEventListener("click", sendToRemovePage);
 ///////////////////////////////////////////////////////////////////////////
 // add favorite message to localStorage
-
-const favoriteBtn = document.getElementsByClassName("favorite").item(0);
-let favoriteMessagesArray = [];
 
 const addFavoriteToLocalStorage = () => {
     if (answerMessage.textContent !== "") {
@@ -178,26 +160,28 @@ const addFavoriteToLocalStorage = () => {
     }
 };
 
-favoriteBtn.addEventListener("click", addFavoriteToLocalStorage);
-
 ///////////////////////////////////////////////////////////////////////////
 // send user to new page on click of seeFavorite button
 
-const seeFavoriteBtn = document.getElementsByClassName("seeFavorite").item(0);
-
 const changePage = () => {
-    window.location = "/Users/gabri/Documents/Konexio/quoteorproverb/favoriteMessages.html";
+    window.location = "../favoriteMessages.html";
 };
-
-seeFavoriteBtn.addEventListener("click", changePage);
 
 ///////////////////////////////////////////////////////////////////////////
 // clear favorite from localStorage
-
-const clearFavoriteBtn = document.getElementsByClassName("clearFavorite").item(0);
 
 const clearFavoriteInLocalStorage = () => {
     localStorage.removeItem("favoriteMessagesArray");
 };
 
+///////////////////////////////////////////////////////////////////////////
+//Function call
+
+resetButton.addEventListener("click", reset);
+addForm.addEventListener("click", formAppears);
+createNewMessage.addEventListener("submit", submitTheNewMessage);
+submitForm.addEventListener("submit", displayMessage);
+removeButton.addEventListener("click", sendToRemovePage);
+favoriteBtn.addEventListener("click", addFavoriteToLocalStorage);
+seeFavoriteBtn.addEventListener("click", changePage);
 clearFavoriteBtn.addEventListener("click", clearFavoriteInLocalStorage);
