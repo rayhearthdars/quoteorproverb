@@ -55,6 +55,7 @@ const radioProverb = document.getElementById("proverb");
 const answer = document.getElementsByClassName("answer").item(0);
 const removeButton = document.getElementsByClassName("removeButton").item(0);
 const favoriteBtn = document.getElementsByClassName("favorite").item(0);
+// You actually never reassign an array when you push or remove an item from it, so you can use const
 let favoriteMessagesArray = [];
 const seeFavoriteBtn = document.getElementsByClassName("seeFavorite").item(0);
 const clearFavoriteBtn = document.getElementsByClassName("clearFavorite").item(0);
@@ -75,6 +76,7 @@ const reset = () => {
 //////////////////////////////////////////////////////////////////////////
 // Add message and add it to start array (data)
 
+// use const instead
 if (JSON.parse(localStorage.getItem("newMessage")) !== null) {
     var newMessage = JSON.parse(localStorage.getItem("newMessage"));
     console.log(newMessage);
@@ -128,6 +130,7 @@ const displayMessage = (ev) => {
     answer.style.display = "flex";
 
     if (radioQuote.checked === true) {
+        // You don't need a let here, you never reassign the variable
         let filteredData = newDataMessages.filter((el) => el.type === "quote");
         console.log("hy2");
         answerMessage.textContent = filteredData[Math.floor(Math.random() * filteredData.length)].message;
