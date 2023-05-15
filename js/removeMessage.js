@@ -13,6 +13,9 @@ const returnToHomePage = () => {
 // display form to remove messages
 
 const createInputCheckboxForMessages = () => {
+    // You could have stored the result in a variable, so you won't need to call the API twice
+    // const currFavorites = localStorage.getItem("newMessage");
+    // if (currFavorites !== null) {...}
     if (localStorage.getItem("newMessage") !== null) {
         let newMessage = localStorage.getItem("newMessage");
         newMessage = JSON.parse(newMessage);
@@ -46,6 +49,8 @@ const createInputCheckboxForMessages = () => {
 const removeMessagesAddedOnSubmit = () => {
     let newMessageCheckboxInputs = document.getElementsByName("newMessageCheckbox");
 
+    // You could have done this in one line 
+    // const newMessages = JSON.parse(localStorage.getItem("newMessage"));
     let newMessage = localStorage.getItem("newMessage");
     newMessage = JSON.parse(newMessage);
 
@@ -55,6 +60,7 @@ const removeMessagesAddedOnSubmit = () => {
     let favoriteMessagesArray = localStorage.getItem("favoriteMessagesArray");
     favoriteMessagesArray = JSON.parse(favoriteMessagesArray);
 
+    // The forEach method helps you in writing less code and is relevant in that case
     for (let i = 0; i < newMessageCheckboxInputs.length; i++) {
         if (newMessageCheckboxInputs[i].checked === true) {
             newDataMessages = newDataMessages.filter((el) => el.message !== newMessageCheckboxInputs[i].value);
